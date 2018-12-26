@@ -1,0 +1,32 @@
+# Categories and subcategories [/categories]
+## Get categories and subcategories [GET]
+Returns array of categories and subcategories.
+
+<!-- include(last_update_date_time.md) -->
+
++ Response 200
+    + Body
+            {
+              "categories": [
+                {
+                  "id": 1,
+                  "translations": [
+                    {
+                      "locale": "uk",
+                      "name": "Десерти"
+                    }
+                  ],
+                  "image": "/photos/example.jpg"
+                }
+              ],
+              "subcategories": [
+                {
+                  "id": 1,
+                  "category_id": 1,
+                  "translations": [
+                    "locale": "uk",
+                    "name": "Торти"
+                  ]
+                }  
+              ]
+            }

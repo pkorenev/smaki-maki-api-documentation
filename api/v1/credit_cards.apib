@@ -1,0 +1,71 @@
+# Credit cards [/credit-cards]
+
+## Get all credit cards [GET]
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Body
+            [
+              {
+                "id": 1,
+                "provider": "liqpay",
+                "number": "1234567890123456",
+                "expiration_date": "12/2021",
+                "cvv": "123",
+                "owner_name": "John Smith",
+                "position": 1
+              }
+            ]
+
+## Add credit cards [POST]
+Adds cards and returns all cards.
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+    + Parameters
+      + `cards` (array<Card>, required) - Array of cards to add
+
++ Response 201
+    + Body
+            [
+              {
+                "id": 1,
+                "provider": "liqpay",
+                "number": "1234567890123456",
+                "expiration_date": "12/2021",
+                "cvv": "123",
+                "owner_name": "John Smith",
+                "position": 1
+              }
+            ]
+
+## Deletes credit cards [DELETE]
+Softly deletes credit cards by setting `deleted_at: DateTime.now` and returns all credit cards.
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+    + Parameters
+      + `credit_card_ids` (array<integer>, required) - Array of cards' ids to delete
+
++ Response 201
+    + Body
+            [
+              {
+                "id": 1,
+                "provider": "liqpay",
+                "number": "1234567890123456",
+                "expiration_date": "12/2021",
+                "cvv": "123",
+                "owner_name": "John Smith",
+                "position": 1
+              }
+            ]

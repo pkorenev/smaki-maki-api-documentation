@@ -1,0 +1,73 @@
+# Orders [/credit-cards]
+
+## Get all orders [GET]
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Body
+            [
+              {
+                "id": 1,
+                "provider": "liqpay",
+                "number": "1234567890123456",
+                "expiration_date": "12/2021",
+                "cvv": "123",
+                "owner_name": "John Smith",
+                "position": 1,
+                "canceled_at": null
+              }
+            ]
+
+## Add order [POST]
+Adds cards and returns all cards.
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+    + Parameters
+      + `cards` (array<Card>, required) - Array of cards to add
+
++ Response 201
+    + Body
+            [
+              {
+                "id": 1,
+                "provider": "liqpay",
+                "number": "1234567890123456",
+                "expiration_date": "12/2021",
+                "cvv": "123",
+                "owner_name": "John Smith",
+                "position": 1
+              }
+            ]
+
+## Cancel order [POST /credit-cards/cancel]
+Cancels order by setting `canceled_at: DateTime.now` and returns all orders.
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+    + Parameters
+      + `credit_cards` (array<CreditCard>, required) - Array of cards to add
+
++ Response 200
+    + Body
+            [
+              {
+                "id": 1,
+                "provider": "liqpay",
+                "number": "1234567890123456",
+                "expiration_date": "12/2021",
+                "cvv": "123",
+                "owner_name": "John Smith",
+                "position": 1,
+                "canceled_at": "15.12.2018 15:50:10"
+              }
+            ]

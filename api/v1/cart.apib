@@ -1,0 +1,103 @@
+# Cart [/cart]
+
+## Get cart info [GET]
+
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Body
+
+            
+            [
+              {
+                "id": 1,
+                "product_id": 1,
+                "quantity": 2
+              }
+            ]
+          
+
+## Add product to cart [POST]
+Returns all cart entries.
+
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
+    + Parameters
+        + product_id: 1 (integer, required) - ID of product
+        + quantity: 1 (integer, default: 1) - Quantity of product instances
+
++ Response 200
+    + Body
+            {
+              "cart_entries": [
+                {
+                  "id": 1,
+                  "product_id": 1,
+                  "quantity": 2,
+                  "available_quantity": 3
+                }
+              ],
+            }
+
+## Updates cart entry [PUT /cart/{id}]
+Returns all cart entries.
+
++ Parameters
+  + id: 1 (integer, required) - ID of cart entry
+  + quantity: 1 (integer, default: 1) - Quantity of product instances
+
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Body
+            {
+              "cart_entries": [
+                {
+                  "id": 1,
+                  "product_id": 1,
+                  "quantity": 2,
+                  "available_quantity": 3
+                }
+              ]
+            }
+
+## Deletes cart entry [DELETE /cart/{id}]
+Deletes cart entry and returns all cart entries.
+
++ Parameters
+    + id: 1 (integer, required) - ID of cart entry
+
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Body
+            {
+              "cart_entries": [
+                {
+                  "id": 1,
+                  "product_id": 1,
+                  "quantity": 2,
+                  "available_quantity": 3
+                }
+              ]
+            }

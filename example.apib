@@ -1,0 +1,58 @@
+FORMAT: 1A
+
+# Messages API
+<!-- include(authentication.apib) -->
+
+
+# Message [/messages]
+
+## Get all messages [GET]
+
++ Response 401
+
++ Request
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            [
+              {
+                "id": 1,
+                "content": "Message 1"
+              }
+            ]
+
+# Message [/messages/{id}]
+
+## Show single message [GET]
+
++ Parameters
+    + id: `1` (number, required) - Id of a message.
+
++ Response 401
+
++ Request
+    + Headers
+
+            Content-Type: application/json;charset=utf-8
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            {
+              "id": 1,
+              "content": "Message 1"
+            }

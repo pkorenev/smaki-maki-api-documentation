@@ -1,0 +1,25 @@
+# Authentication [/access_tokens]
+## Login user [POST]
+
++ Request
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            {
+              "email": "test@example.com",
+              "password": "password"
+            }
+
++ Response 201
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            {
+              "access_token": "access_token"
+            }

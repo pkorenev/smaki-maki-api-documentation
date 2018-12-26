@@ -1,0 +1,30 @@
+# Ingredients [/ingredients]
+
+# Get all ingredients [GET]
+
+<!-- include(last_update_date_time.md) -->
+
++ Response 200
+    + Body
+            {
+              "ingredients": [
+                {
+                  "id": 1,
+                  "ingredient_group_id": 1,
+                  "small_image": "/photos/example.jpg",
+                  "translations": [
+                    {
+                      "locale": "uk",
+                      "name": "Базилік"
+                    }
+                  ]
+                }
+              ],
+              "ingredient_groups": [
+                {
+                  "id": 1,
+                  "name": "Додаткові"
+                }
+              ] 
+            }
+            

@@ -1,0 +1,25 @@
+# Subscriptions [/subscriptions]
+
+# Subscribe [POST]
+
+adds email to subscribers if does not exist yet. 
+Returns status. Available statuses: 
+  - `success` - successfully added
+  - `server_error` - some server error
+  - `already_exists` - email already added
+
++ Parameters
+    + email: "example.user@gmail.com" (string, required) - email
+
+
+
++ Response 201
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            {
+              "status": "success"
+            }

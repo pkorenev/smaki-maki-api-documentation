@@ -1,0 +1,86 @@
+# Users [/users]
+
+## Sign up [POST /users/sign-up]
+Creates new user
+
++ Parameters
+  + user (object)
+    + name: "Pasha"
+    + email: "user.email@gmail.com"
+    + phone: "+38 (098) 123 45 67"
+    + birthday: "15.12.1995",
+    + gender: "m"
+    + password: "12345678"
+    + password_confirmation: "12345678"
+
++ Response 201
+    + Body
+            {
+              "name": "John",
+              "phone": "+38 (098) 123 45 67",
+              "email": "user.email@gmail.com",
+              "birthday": "15.01.1990",
+              "gender": "m",
+              "bonus": 11.50,
+              "subscribed_on_newsletters": true,
+              "delivery_places": [
+                {
+                  "name": "",
+                  "address": "Street name, house number / apartment number",
+                  "door_code": "",
+                  "comment": ""
+                }
+              ],
+              "orders": [
+                {
+                  "id": 1,
+                  "created_at": "14.12.2018 14:20:15",
+                  "name": "John",
+                  "phone": "+38 (098) 123 45 67",
+                  "email": "user.email@gmail.com",
+                  "delivery_method": "courier",
+                  "delivery_place_id": 1, 
+                  "delivery_datetime": "15.12.2018 16:55",
+                  "comment": ""
+                }
+              ],
+              "credit_cards": [
+                {
+                  "id": 1,
+                  "provider": "liqpay",
+                  "number": "1234567890123456",
+                  "expiration_date": "12/2021",
+                  "cvv": "123",
+                  "owner_name": "John Smith",
+                  "position": 1
+                }
+              ],
+              "favourite_product_ids": [1,2,3],
+              "cart_entries": [
+                {
+                  "id": 1,
+                  "product_id": 1,
+                  "quantity": 2,
+                  "available_quantity": 3
+                }
+              ]
+            }
+
+
+## Remember password [POST /users/remember-password]
+Sends link via email for password reset.
+
++ Parameters
+  + user (object)
+    + email: "user.email@gmail.com"
+
+
++ Response 201
+    + Body
+            {
+              "status": "sent_email"
+            }
+
+
+
+

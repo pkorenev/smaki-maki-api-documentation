@@ -1,0 +1,25 @@
+# Promotions [/promotions]
+
+## Get promotions [GET]
+
+<!-- include(last_update_date_time.md) -->
+
++ Response 200
+    + Body
+
+            [
+              {
+                "id": 1,
+                "translations": [
+                  {
+                    "locale": "uk",
+                    "name": "Акція Тижня -50%",
+                    "description": "Щотижня Обирайте Рол або Піцу зі знижкою 50%.\nКожне замовлення може містити ЛИШЕ один акційний товар - Піцу або Рол.\n*Акція не сумується з іншими"
+                  }
+                ],
+                "large_image": "/photos/example.jpg",
+                "product_ids": [1,2,3],
+                "start_date": "01.01.2019",
+                "end_date": "31.01.2019"
+              }
+            ]

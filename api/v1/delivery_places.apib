@@ -1,0 +1,68 @@
+# Delivery places [/delivery-places]
+
+## Get all delivery places [GET]
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+
++ Response 200
+    + Body
+            [
+              {
+                "name": "",
+                "address": "Street name, house number / apartment number",
+                "door_code": "",
+                "comment": ""
+              }
+            ]
+
+## Add delivery places [POST]
+Adds delivery places and returns all delivery places.
+
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+    + Parameters
+      + `delivery_places` (array<DeliveryPlace>, required) - Array of delivery places to add
+
++ Response 201
+    + Body
+            [
+              {
+                "name": "",
+                "address": "Street name, house number / apartment number",
+                "door_code": "",
+                "comment": ""
+              }
+            ]
+
+
+## Delete delivery places [DELETE]
+Softly deletes delivery places by setting `deleted_at: DateTime.now` and returns all delivery places.
+
+
++ Response 401
+
++ Request
+    + Headers
+
+            Authorization: Bearer ABC123
+    + Parameters
+      + `delivery_place_ids` (array<DeliveryPlace>, required) - Array of delivery places' ids to delete
+
++ Response 200
+    + Body
+            [
+              {
+                "name": "",
+                "address": "Street name, house number / apartment number",
+                "door_code": "",
+                "comment": ""
+              }
+            ]

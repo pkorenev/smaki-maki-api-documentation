@@ -1,0 +1,52 @@
+# Products [/products]
+
+## Get products [GET]
+
+```
+if provided `product_ids` 
+  returns only products with `id` found in provided `product_ids` 
+else if provided `category_id` 
+  returns only products related category.
+else if provided `subcategory_id` 
+  returns only products related to category.
+else if both `category_id` and `subcategory_id` provided
+  if subcategory related to provided category
+    returns products related to subcategory.
+  else
+    returns empty array.
+else
+  returns all products.    
+```
+
+<!-- include(last_update_date_time.md) -->
+
++ Parameters
+  + category_id: 1 (integer)
+  + subcategory_id: 1 (integer)
+  + product_ids: [1,2] (array<integer>) 
+
++ Response 200
+    + Body
+
+            [
+              {
+                "id": 1,
+                "subcategory_id": 1,
+                "translations": [
+                  {
+                    "locale": "uk",
+                    "name": "Наполеон",
+                    "description": "Дуже смачний торт"
+                  }
+                ],
+                "large_image": "/photos/example.jpg",
+                "small_image": "/photos/example.jpg",
+                "ingredient_ids": [1,2,3],
+                "additional_ingredient_ids": [4,5,6]
+                "price": 123.55,
+                "weight": 100,
+                "top_rated": true,
+                "new": true,
+                "promotion_ids": [1,2,3]
+              }
+            ]
